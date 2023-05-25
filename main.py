@@ -17,7 +17,7 @@ for item in db:
     print(item['Nome'])
     msg = genMSG(item)
     file.write(msg)
-    file.wirte("\n\n")
+    file.write("\n\n")
 
 
 file.close()
