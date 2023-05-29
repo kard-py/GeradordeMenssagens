@@ -5,7 +5,7 @@ import json
 
 def genMSG(aluno):
 
-    msg = f"""Email:{aluno["email"]}\nAssunto: Requerimento de Historico Escolar E.M. São Domingos de Sorriso - MT\n\nOlá Boa Tarde Sou o Secretario da Escola Municipal São Domingos de Sorriso - MT Preciso do Histórico Escolar de Alguns Ex-alunos da sua escola ({aluno['escola_origem']} do municipio de {aluno['cidade_origem']}):\nNome dos Alunos - Data de Transferencia:\n{aluno['alunos']}\nAtt."""
+    msg = f"""Email:{aluno["email"]}\nAssunto:Requerimento de Histórico Escolar E.M. São Domingos de Sorriso - MT\n\nOlá Boa Tarde Sou o Secretario da Escola Municipal São Domingos de Sorriso - MT Preciso do Histórico Escolar de Alguns Ex-alunos da sua escola ({aluno['escola_origem']} do municipio de {aluno['cidade_origem']}):\n\nNome dos Alunos - Data de Transferencia:\n{aluno['alunos']}\n\nAtt."""
 
     return msg
 
@@ -68,7 +68,7 @@ for e in escolas_com_email:
     email = ""
     for i in db:
         if i['escola_origem'] == e:
-            alunos.append("{} Trasferido em: {}".format(i['Nome'],i['data_transf']))
+            alunos.append("{} Transferido(a) em: {}".format(i['Nome'],i['data_transf']))
             cidade_origem = i['cidade_origem']
             email = i['email']
     
